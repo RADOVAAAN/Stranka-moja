@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>videjo prohravatsh</title>
+    <style>
+        video{
+            width:640px;
+        }
+    </style>
+
+</head> 
+<body>
+    <video src="video0_16.mov" id="video_player" ></video>
+    <br>
+    <button onclick="videoPlay()">Play</button>
+    <button onclick="videoPause()">Pause</button>
+    <button onclick="videoStop()">Stop</button>
+    <button onclick="videoRestart()" id="Restart" >Restart</button>
+    <button onclick="videoLoop()" id="loop">Loop</button>
+<script>
+    function resetImage(){ 
+    }
+    var videoPlayer= document.getElementById("video_player");
+    function videoPlay(){
+        videoPlayer.play();
+
+    }
+    function videoStop(){
+        videoPlayer.currentTime = 0;
+        videoPlayer.pause();
+
+    }
+    function videoPause(){
+        videoPlayer.pause();
+
+    }
+    function videoRestart(){
+        videoPlayer.currentTime = 0;
+        videoPlayer.play();
+        document.getElementById("reset").src ="reset.png";
+    }
+    function videoLoop(){
+        document.getElementById("video_player").loop=true;
+    }
+
+
+</script>
+
+</body>
+</html>
